@@ -44,7 +44,15 @@
                 }
                 var leeloolxpssourl = getCookie('leeloolxpssourl');
                 if(leeloolxpssourl !=''){
-                        document.getElementById("leeloosocialdiv").innerHTML = '<iframe src="'+leeloolxpssourl+'" class="leeloosocial"></iframe>';
+
+                    var url_string = window.location.href
+                    var url = new URL(url_string);
+                    var view = url.searchParams.get("view");
+                    if( view ){
+                        leeloolxpssourl = leeloolxpssourl+'&view='+view;
+                    }
+
+                    document.getElementById("leeloosocialdiv").innerHTML = '<iframe src="'+leeloolxpssourl+'" class="leeloosocial"></iframe>';
                 }else{
                         window.location.href = "/login/index.php";
                 }
