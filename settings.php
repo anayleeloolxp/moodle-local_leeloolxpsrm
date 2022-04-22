@@ -35,6 +35,6 @@ if ($hassiteconfig) {
         get_string('addsrmpage', 'local_leeloolxpsrm'),
         get_string('addsrmpagehelp', 'local_leeloolxpsrm'), 1);
 
-    //$setting->set_updatedcallback(local_leeloolxpsrm_updateset());
+    $setting->set_updatedcallback(local_leeloolxpsrm_updateset());
     $settings->add($setting);
 }
