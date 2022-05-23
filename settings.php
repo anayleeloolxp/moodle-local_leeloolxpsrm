@@ -31,9 +31,12 @@ if ($hassiteconfig) {
 
     $ADMIN->add('localplugins', $settings);
 
-    $setting = new admin_setting_configcheckbox('local_leeloolxpsrm/addsrmpage',
+    $setting = new admin_setting_configcheckbox(
+        'local_leeloolxpsrm/addsrmpage',
         get_string('addsrmpage', 'local_leeloolxpsrm'),
-        get_string('addsrmpagehelp', 'local_leeloolxpsrm'), 1);
+        get_string('addsrmpagehelp', 'local_leeloolxpsrm'),
+        1
+    );
 
     $setting->set_updatedcallback(local_leeloolxpsrm_updateset());
     $settings->add($setting);

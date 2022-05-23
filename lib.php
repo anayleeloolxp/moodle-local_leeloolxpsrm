@@ -73,7 +73,8 @@ function local_leeloolxpsrm_updateset() {
             'itemid' => 0, // usually = ID of row in table
             'contextid' => 1, // ID of context
             'filepath' => '/', // any path beginning and ending in /
-            'filename' => 'leeloolxp-smart-dashboard.html'); // any filename
+            'filename' => 'leeloolxp-smart-dashboard.html'
+        ); // any filename
 
         // Get file
         $file = $fs->get_file($fileinfo['contextid'], $fileinfo['component'], $fileinfo['filearea'], $fileinfo['itemid'], $fileinfo['filepath'], $fileinfo['filename']);
