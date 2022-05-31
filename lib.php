@@ -30,7 +30,7 @@ function local_leeloolxpsrm_updateset() {
 
     global $CFG;
 
-    $addsrmpage = get_config('local_leeloolxpsrm')->addsrmpage;
+    @$addsrmpage = get_config('local_leeloolxpsrm')->addsrmpage;
 
     if ($addsrmpage == 1) {
         $fs = get_file_storage();
