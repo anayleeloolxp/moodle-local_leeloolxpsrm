@@ -32,5 +32,6 @@ $plugin->requires = 2019052000;
 $plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = array(
     'local_staticpage' => 2018092600,
-    'local_boostnavigation' => 2020080400
+    'local_boostnavigation' => 2020080400,
+    'theme_thinkblue' => 2022053002
 );
