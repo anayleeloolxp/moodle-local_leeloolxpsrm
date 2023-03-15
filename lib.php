@@ -33,7 +33,7 @@ function local_leeloolxpsrm_updateset() {
     @$addsrmpage = get_config('local_leeloolxpsrm')->addsrmpage;
 
     if ($addsrmpage == 1) {
-        $fs = get_file_storage();
+        /* $fs = get_file_storage();
         $files = $fs->get_area_files(1, 'local_staticpage', 'documents');
 
         $filenames = array();
@@ -53,18 +53,21 @@ function local_leeloolxpsrm_updateset() {
                 'filename' => 'leeloolxp-smart-dashboard.html',
             );
             $file = $fs->create_file_from_pathname($filerecord, $filename);
-        }
+        } */
+
+        /* $addmenudash = PHP_EOL .
+            'Leeloo LXP Dashboard|/local/staticpage/view.php?page=leeloolxp-smart-dashboard||||||fa-leeloo|leeloossourl|'; */
 
         $addmenudash = PHP_EOL .
-            'Leeloo LXP Dashboard|/local/staticpage/view.php?page=leeloolxp-smart-dashboard||||||fa-leeloo|leeloossourl|';
+            'Leeloo LXP Dashboard|/local/leeloolxpsrm||||||fa-leeloo|leeloossourl|';
 
         $existinglinks = get_config('local_boostnavigation')->insertcustomnodesusers;
 
-        if (strpos($existinglinks, 'leeloolxp-smart-dashboard') === false) {
+        if (strpos($existinglinks, '/local/leeloolxpsrm') === false) {
             set_config('insertcustomnodesusers', $existinglinks . $addmenudash, 'local_boostnavigation');
         }
     } else {
-        $fs = get_file_storage();
+        /* $fs = get_file_storage();
 
         $fileinfo = array(
             'component' => 'local_staticpage',
@@ -88,14 +91,14 @@ function local_leeloolxpsrm_updateset() {
         // Delete it if it exists.
         if ($file) {
             $file->delete();
-        }
+        } */
 
         $existinglinks = get_config('local_boostnavigation')->insertcustomnodesusers;
         $listext = explode(PHP_EOL, $existinglinks);
         $newlist = array();
 
         foreach ($listext as $existmen) {
-            if (strpos($existmen, 'leeloolxp-smart-dashboard') === false) {
+            if (strpos($existmen, '/local/leeloolxpsrm') === false) {
                 $newlist[] = $existmen;
             }
         }
